@@ -2240,16 +2240,15 @@ footer div:nth-child(3) {
 }
 
 /* Small phones */
-@media (max-width: 500px) {
+@media (max-width: 420px) {
     .landing-page {
         padding-inline: 10px;
     }
 
-    .hero {
-        grid-template-columns: auto auto;
+    .hero div.center-logo {
+        grid-template-columns: 1fr;
     }
 
-    .center-logo,
     .icon {
         grid-column: auto;
     }
