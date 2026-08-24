@@ -2240,13 +2240,13 @@ footer div:nth-child(3) {
 }
 
 /* Small phones */
-@media (max-width: 420px) {
+@media (max-width: 500px) {
     .landing-page {
         padding-inline: 10px;
     }
 
     .hero {
-        grid-template-columns: 1fr;
+        grid-template-columns: auto auto;
     }
 
     .center-logo,
@@ -2370,4 +2370,4 @@ footer div:nth-child(3) {
 @property --tw-drop-shadow-size {
     syntax: "*";
     inherits: false
-} 
+}
