@@ -2042,7 +2042,7 @@ footer div:nth-child(3) {
     .hero {
         grid-template-columns: 1fr 1fr;
         min-height: auto;
-        padding-top: 70px
+        padding-top: 10px;
     }
 
     .hero h1 {
@@ -2070,6 +2070,7 @@ footer div:nth-child(3) {
         margin-inline: auto;
         aspect-ratio: auto;
         align-items: start;
+        padding-top: 0;
     }
 
     /* Logo becomes the first full-width grid item */
