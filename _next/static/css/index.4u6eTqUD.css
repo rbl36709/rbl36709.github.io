@@ -489,14 +489,14 @@
 
 html {
     scroll-behavior: smooth;
-    cursor: image-set(url(../../../brand/cursor-2x.png) 2dppx), auto;
+    cursor: image-set(url(../../../brand/cursor-2x.png) 2dppx) 12 12, auto;
     scroll-padding-top: 50px
 }
 
 body {
     color: var(--ink);
     background: var(--ink);
-    cursor: image-set(url(../../../brand/cursor-2x.png) 2dppx), auto;
+    cursor: image-set(url(../../../brand/cursor-2x.png) 2dppx) 12 12, auto;
     margin: 0;
     font-family: Courier New, Courier, monospace;
     overflow-x: hidden;
@@ -524,7 +524,7 @@ a,
 button,
 label,
 input[type=file] {
-    cursor: image-set(url(../../../brand/cursor-pointer-2x.png) 2dppx), pointer
+    cursor: image-set(url(../../../brand/cursor-pointer-2x.png) 2dppx) 12 12, pointer;
 }
 
 a {
@@ -538,7 +538,7 @@ input {
 
 button,
 a {
-    -webkit-tap-highlight-color: transparent cursor: image-set(url(../../../brand/cursor-pointer-2x.png) 2dppx), pointer
+    -webkit-tap-highlight-color: transparent cursor: image-set(url(../../../brand/cursor-pointer-2x.png) 2dppx) 12 12, pointer
 }
 
 img {
@@ -810,7 +810,7 @@ nav .nav-signup {
 
 .icons {
     width: 100px;
-    cursor: image-set(url(../../../brand/cursor-pointer-2x.png) 2dppx), pointer;
+    cursor: image-set(url(../../../brand/cursor-pointer-2x.png) 2dppx) 12 12, pointer;
 }
 
 .pixel-button {
@@ -849,6 +849,40 @@ nav .nav-signup {
 }
 
 
+.running-line-wrapper {
+      color: var(--cream);
+    background: var(--red);
+    border-block: 4px solid var(--ink);
+    box-shadow: 0 7px 0 var(--orange);
+    margin: 0 calc(-1*clamp(18px, 4vw, 70px));
+    transform: rotate(-.65deg);
+  display: flex;
+  margin: auto;
+  width: 100%;
+  overflow: hidden;
+}
+
+.running-line {
+  white-space: nowrap;
+}
+
+.running-line {
+        padding: 12px 0;
+    font-weight: 900;
+  animation: run 25s linear infinite;
+}
+
+@keyframes run {
+  from {
+    transform: translateX(0%);
+  }
+  /* Magic is here. This is the width of the elem with text after rendering the page */
+  to {
+    transform: translateX(-1683.35px);
+  }
+}
+
+
 .marquee {
     color: var(--cream);
     background: var(--red);
@@ -856,15 +890,20 @@ nav .nav-signup {
     box-shadow: 0 7px 0 var(--orange);
     margin: 0 calc(-1*clamp(18px, 4vw, 70px));
     overflow: hidden;
-    transform: rotate(-.65deg)
+    transform: rotate(-.65deg);
+    display: flex;
+    overflow: hidden;
 }
 
-.marquee div {
-    width: max-content;
+.marquee-content {
+    flex-shrink: 0;
+    white-space: nowrap;
     padding: 12px 0;
     font-weight: 900;
-    animation: 22s linear infinite marquee
+    animation: marquee 25s linear infinite;
 }
+
+
 
 .home-grid,
 .split-grid {
@@ -911,7 +950,6 @@ nav .nav-signup {
     color: var(--cream);
     background: var(--red);
     border-bottom: var(--border);
-    cursor: image-set(url(../../../brand/cursor-move-2x.png) 2dppx), move;
     align-items: center;
     gap: 9px;
     padding: 7px 8px 7px 12px;
@@ -970,7 +1008,7 @@ nav .nav-signup {
 
 .show-row {
     border-bottom: 2px dashed var(--orange);
-    grid-template-columns: 62px 1fr auto;
+    grid-template-columns: 75px 1fr auto;
     align-items: center;
     gap: 14px;
     padding-bottom: 15px;
@@ -978,7 +1016,7 @@ nav .nav-signup {
 }
 
 .show-date {
-    height: 62px;
+    height: 75px;
     color: var(--cream);
     background: var(--red);
     border: var(--border);
@@ -1020,6 +1058,11 @@ nav .nav-signup {
     font-weight: 900;
     text-decoration: none;
     transform: rotate(1deg)
+}
+
+.show-row>a:hover {
+    color: var(--ink);
+    background: var(--cream);
 }
 
 .booking-note {
@@ -1072,7 +1115,6 @@ nav .nav-signup {
 
 .folder-tabs {
     border-bottom: var(--border);
-    cursor: image-set(url(../../../brand/cursor-move-2x.png) 2dppx), move;
     gap: 6px;
     margin-bottom: 24px;
     display: flex
@@ -1231,23 +1273,13 @@ nav .nav-signup {
 .comic-strip {
     display: grid;
     grid-auto-flow: column;
-
-    /* Four visible panels with three 16px gaps */
     grid-auto-columns: calc((100% - 48px) / 4);
-
     gap: 16px;
     padding: 5px 5px 20px;
     overflow-x: auto;
     scroll-snap-type: x mandatory;
     scroll-behavior: smooth;
     overscroll-behavior-inline: contain;
-
-    cursor:
-        image-set(url(../../../brand/cursor-move-2x.png) 2dppx),
-        move;
-
-    /* Optionally hide the scrollbar */
-    scrollbar-width: none;
 }
 
 .comic-strip::-webkit-scrollbar {
@@ -1372,7 +1404,7 @@ nav .nav-signup {
     font: inherit;
     font-size: 0.8rem;
     font-weight: 900;
-    cursor: pointer;
+    cursor: image-set(url(../../../brand/cursor-pointer-2x.png) 2dppx) 12 12, pointer;
 }
 
 .comic-arrow:hover:not(:disabled),
@@ -1686,7 +1718,6 @@ iframe {
     bottom: 10px;
 }
 
-/* Previous and next buttons */
 .carousel-button {
     width: 34px;
     height: 42px;
@@ -1695,11 +1726,10 @@ iframe {
     top: 50%;
     z-index: 2;
     transform: translateY(-50%);
-
     background: var(--cream);
     border: 2px solid var(--ink);
     color: var(--ink);
-    cursor: pointer;
+    cursor: image-set(url(../../../brand/cursor-pointer-2x.png) 2dppx) 12 12, pointer;
     font: inherit;
     font-weight: 900;
 }
@@ -1742,6 +1772,11 @@ iframe {
     .merch-card:nth-child(even) {
         transform: none;
     }
+
+        .landing-page {
+        padding-inline: 30px;
+    }
+
 }
 
 .signup-section {
@@ -1917,12 +1952,6 @@ img#rachel {
 .popup-content p:not(.eyebrow) {
     font-size: .75rem;
     line-height: 1.5
-}
-
-@keyframes marquee {
-    to {
-        transform: translate(-50%)
-    }
 }
 
 @keyframes blink {
@@ -2155,8 +2184,9 @@ img#rachel {
         font-size: clamp(4.2rem, 21vw, 7rem)
     }
 
-    .marquee {
-        margin-inline: -14px
+    .running-line-wrapper {
+        margin-inline: -14px;
+        margin-top: 50px;
     }
 
     .home-grid,
@@ -2174,12 +2204,12 @@ img#rachel {
     }
 
     .show-row {
-        grid-template-columns: 52px 1fr
+        grid-template-columns: 75px 1fr
     }
 
     .show-row>a {
         grid-column: 2;
-        justify-self: start
+        justify-self: end
     }
 
 
@@ -2266,10 +2296,6 @@ img#rachel {
 
 /* Small phones */
 @media (max-width: 420px) {
-    .landing-page {
-        padding-inline: 10px;
-    }
-
     .hero div.center-logo {
         grid-template-columns: 1fr;
     }
