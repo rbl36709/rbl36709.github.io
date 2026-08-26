@@ -1502,7 +1502,14 @@ div.bandcamp-embed {
 }
 
 .vlog-grid {
-    grid-template-columns: 1.3fr .7fr;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    display: grid
+}
+
+.vlog-grid-below {
+    margin-top: 25px;
+    grid-template-columns: 1fr 1fr 1fr;
     gap: 20px;
     display: grid
 }
