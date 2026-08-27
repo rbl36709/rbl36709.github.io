@@ -1381,7 +1381,7 @@ img#microphone {
     grid-auto-flow: column;
     grid-auto-columns: calc((100% - 55px) / 4);
     gap: 16px;
-    padding: 5px 5px 20px;
+    padding: 5px 15px 20px;
     overflow-x: auto;
     scroll-snap-type: x mandatory;
     scroll-behavior: smooth;
@@ -1407,7 +1407,7 @@ img#microphone {
     place-items: center;
     width: 100%;
     aspect-ratio: 5 / 8;
-    margin: 0 0 0 10px;
+    margin: 0;
     padding: 18px;
     overflow: hidden;
     border: var(--border);
@@ -1531,20 +1531,13 @@ img#microphone {
     opacity: 0.4;
 }
 
-/* Two panels on tablets */
+
 @media (max-width: 800px) {
     .comic-strip {
         grid-auto-columns: calc((100% - 16px) / 2);
     }
 }
 
-@media (min-width:720px) {
-    .hero {
-        margin-top: 110px
-    }
-}
-
-/* One panel on phones */
 @media (max-width: 500px) {
     .comic-strip {
         grid-auto-columns: 100%;
@@ -2395,11 +2388,6 @@ img#rachel {
     .comic-topline {
         flex-direction: column;
         align-items: flex-start
-    }
-
-    .comic-strip {
-        grid-template-columns: repeat(4, 78vw);
-        margin-right: -15px
     }
 
     .vlog-grid,
