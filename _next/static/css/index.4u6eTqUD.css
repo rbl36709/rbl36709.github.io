@@ -2320,7 +2320,9 @@ img#rachel {
 
     img#devil-fly,
     img#dust-lauru,
-    img#dust-lauru-2, img#corner, img#corner-2 {
+    img#dust-lauru-2,
+    img#corner,
+    img#corner-2 {
         display: none;
     }
 
@@ -2335,6 +2337,11 @@ img#rachel {
     img#microphone {
         width: 250px;
     }
+
+    .youtube-link {
+        margin-bottom: 50px;
+    }
+
 
 
 
